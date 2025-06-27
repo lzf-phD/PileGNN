@@ -1,0 +1,21 @@
+node 1 0 0 0
+node 2 0 0 -1.45
+node 3 0 0 -9.05
+node 4 0 0 -11.1
+node 5 0 0 -15.31
+node 6 0 0 -22.08
+node 7 0 0 -23.92
+node 8 0 0 -34.55
+node 9 0 0 -38.27
+node 10 0 0 -45.45
+node 11 0 0 -50.93
+edge 1 1 2
+edge 2 2 3
+edge 3 3 4
+edge 4 4 5
+edge 5 5 6
+edge 6 6 7
+edge 7 7 8
+edge 8 8 9
+edge 9 9 10
+edge 10 10 11
