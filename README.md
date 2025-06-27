@@ -13,7 +13,7 @@ PyTorch Geometric         1.7.2
 1. The directory datasets/Pile_EB stores the partial datasets for end-bearing pile samples.
 2. The directory datasets/Pile_F stores the partial datasets for friction pile samples.
 
-Due to intellectual property restrictions, only a portion of the dataset is provided in the dataset folder for demonstration purposes.
+Due to intellectual property restrictions, only a portion of the dataset is provided in the data directory for demonstration purposes.
 
 # Training
 To train models using end-bearing pile.
