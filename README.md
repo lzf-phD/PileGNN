@@ -10,10 +10,40 @@ numpy                     1.19.2
 PyTorch Geometric         1.7.2
 
 # dataset
-1. The directory datasets/Pile_EB stores the partial datasets for end-bearing pile samples.
-2. The directory datasets/Pile_F stores the partial datasets for friction pile samples.
+1. The directory `datasets/Pile_EB` stores the datasets for end-bearing pile samples.  
+2. The directory `datasets/Pile_F` stores the datasets for friction pile samples.  
+3. For training sets:  
+   - `datasets/Pile_EB/train_A` and `datasets/Pile_F/train_A` store the **source features**.  
+   - `datasets/Pile_EB/train_B` and `datasets/Pile_F/train_B` store the **labels**.  
+4. For testing sets:  
+   - `datasets/Pile_EB/test_A` and `datasets/Pile_F/test_A` store the **source features**.  
+   - `datasets/Pile_EB/test_B` and `datasets/Pile_F/test_B` store the **labels**.  
+5. Model prediction results (outputs) are stored in:  
+   - `result/Pile_EB` for end-bearing pile samples.  
+   - `result/Pile_F` for friction pile samples.  
 
-Due to intellectual property restrictions, only a portion of the dataset is provided in the data directory for demonstration purposes.
+**Note: Due to project privacy and intellectual property considerations, only a representative subset of the training dataset is publicly shared for reference.**
+
+
+# Datasets directory
+data/  
+├── data_EB/     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# End-bearing pile datasets  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── cond/    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# input parameters  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── train/   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── test/   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── train_A/    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# inputs  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── train_B/    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# labels  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── test_A/     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# inputs  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── test_B/     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# labels  
+└── data_F/     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Friction pile datasets  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── cond/    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# input parameters  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── train/   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── test/   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── train_A/    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# inputs  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── train_B/    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# labels  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── test_A/     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# inputs  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── test_B/     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# labels  
+
 
 # Training
 To train models using end-bearing pile.
@@ -37,5 +67,6 @@ To test models using friction pile
    python test_F.py
 ```
 
-# Result
-Partial visualized test results are available in the result_display directory.
+
+# Result_PNG
+Partial visualized test results are available in the directory result/PNG.
