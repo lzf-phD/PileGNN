@@ -63,17 +63,33 @@ model_constructor_args = {
 } # {input_dim=1,hidden_dim=256，hidden_dim=0，aggr=mean，edge_attr_dim=4，gnn_act=True，gnn_dropout=True，device=cuda0}
 model = locals()[args.model](**model_constructor_args).to(device)
 model.eval()
-model.load_state_dict(torch.load('checkpoints/Pile_F/model_1.pth', map_location=device))
+model.load_state_dict(torch.load('checkpoints/Pile_F/model_100.pth', map_location=device))
 # Save result path
 task = args.dataset_name
-save_model_dir = 'results/pilegraph/'
-if not os.path.exists(save_model_dir):
-    os.makedirs(save_model_dir)
 
-for data,filename,_ in tqdm(test_loader):
+output_dir = "result\pile_F"
+os.makedirs(output_dir, exist_ok=True)
+
+for data,filename,H in tqdm(test_loader):
     data = data.to(device)
+    H_list = [t.item() for t in H]
     edge_out = model(data.x, data.edge_index, data.edge_attr,data.P,data.D,data.K)
-    print(edge_out)
+    pred = edge_out.squeeze().tolist() #penetration ratio
+    for i in range(len(pred)):
+        if pred[i] > 0.95:
+            pred[i] = 1.0
+        elif pred[i] < 0.05:
+            pred[i] = 0.0
+        else:
+            pred[i] = round(pred[i], 2)
+    PL = round(sum(a * b for a, b in zip(pred, H_list)), 2) #pile length
+    txt_name = filename[0]
+    save_path = os.path.join(output_dir, f"{txt_name}.txt")
+    with open(save_path, "w") as f:
+        for p in pred:
+            f.write(str(p) + "\n")
+    print(pred)
+    print(PL)
 
 
 
