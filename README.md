@@ -10,14 +10,14 @@ numpy                     1.19.2
 PyTorch Geometric         1.7.2
 
 # dataset
-1. The directory `datasets/Pile_EB` stores the datasets for end-bearing pile samples.  
-2. The directory `datasets/Pile_F` stores the datasets for friction pile samples.  
+1. The directory `data/data_EB` stores the datasets for end-bearing pile samples.  
+2. The directory `data/data_F` stores the datasets for friction pile samples.  
 3. For training sets:  
-   - `datasets/Pile_EB/train_A` and `datasets/Pile_F/train_A` store the **source features**.  
-   - `datasets/Pile_EB/train_B` and `datasets/Pile_F/train_B` store the **labels**.  
+   - `data/data_EB/train_A` and `data/data_F/train_A` store the **source features**.  
+   - `data/data_EB/train_B` and `data/data_F/train_B` store the **labels**.  
 4. For testing sets:  
-   - `datasets/Pile_EB/test_A` and `datasets/Pile_F/test_A` store the **source features**.  
-   - `datasets/Pile_EB/test_B` and `datasets/Pile_F/test_B` store the **labels**.  
+   - `data/data_EB/test_A` and `data/data_F/test_A` store the **source features**.  
+   - `data/data_EB/test_B` and `data/data_F/test_B` store the **labels**.  
 5. Model prediction results (outputs) are stored in:  
    - `result/Pile_EB` for end-bearing pile samples.  
    - `result/Pile_F` for friction pile samples.  
