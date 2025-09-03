@@ -67,6 +67,23 @@ To test models using friction pile
    python test_F.py
 ```
 
-
-# Result_PNG
+# Visualized result
 Partial visualized test results are available in the directory result/PNG.
+
+# CAD Conversion Workflow
+
+1. Open AutoCAD.
+2. Run the NETLOAD command and load the plugin located at:
+```bash
+   AutoCADPlugin/convert-cad.dll
+```
+(This plugin is implemented in C#.)
+3. After loading, enter the command:
+```bash
+   MyPickPlot
+```
+4. In the dialog, select a .png file from the result/PNG directory.
+5. The selected PNG file will be converted into a geological design drawing in DWG format.
+
+![CAD transformation pipeline.png](other/CAD%20transformation%20pipeline.png)
+
